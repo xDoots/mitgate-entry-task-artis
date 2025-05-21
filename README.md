@@ -164,6 +164,6 @@ Let's walk through fixing the first failing test to give you an idea of the work
 ## Submission
 
 1. Push your code to a new public repository on GitHub
-2. Provide the repository URL with entry submission to the Academy
+2. Send an email to akademija@mitigate.dev with your repository URL
 
 Good luck! 🍀
