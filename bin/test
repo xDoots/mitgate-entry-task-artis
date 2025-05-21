@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ -n "$1" ]; then
+  ruby -Ilib:test test/vending_machine_test.rb -n "$1"
+else
+  ruby -Ilib:test test/vending_machine_test.rb
+fi

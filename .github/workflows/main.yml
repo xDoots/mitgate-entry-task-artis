@@ -1,0 +1,25 @@
+name: Main
+
+on: [push]
+
+env:
+  CI: 1
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        ruby: ['3.0', '3.4']
+    runs-on: ${{ matrix.os }}
+    name: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - name: Run tests
+        run: bin/test
