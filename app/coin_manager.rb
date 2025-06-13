@@ -1,4 +1,6 @@
 class CoinManager
+  attr_reader :balance
+  
   def initialize
     @balance = nil
   end
