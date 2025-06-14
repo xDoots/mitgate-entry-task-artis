@@ -10,7 +10,7 @@ class VendingMachine
     @coin_manager = CoinManager.new
     @product_catalog = ProductCatalog.new
     @transaction_processor = TransactionProcessor.new
-    @display_manager = DisplayManager.new(self)
+    @display_manager = DisplayManager.new(@transaction_processor)
   end
   
   def insert(amount)
