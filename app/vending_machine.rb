@@ -28,7 +28,10 @@ class VendingMachine
     @product_catalog.update_stock(code)
     change = @transaction_processor.process_transaction(product, balance)
     @coin_manager.deduct_amount(product[:price])
-    @display_manager.format_transaction_result(product[:name], change)
+    result = @display_manager.format_transaction_result(product[:name], change)
+    details = @transaction_processor.last_transaction_details
+
+    "#{result}\n Transaction details: #{details}"
   end
 
   def dispense(product)
